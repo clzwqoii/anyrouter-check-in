@@ -175,11 +175,25 @@
 4. 网站是否更改了签到接口
 5. 查看 Actions 运行日志获取详细错误信息
 
+安装依赖
+# 使用 uv 管理 Python 项目
+uv venv --python D:/Python3.13
+.venv\Scripts\activate  # Windows
+# 或
+source .venv/bin/activate  # Linux/Mac
+
+# 安装 Python 依赖
+uv pip install -r requirements.txt
+
+# 安装 Playwright 浏览器
+playwright install chromium
+
 ## 本地开发环境设置
 
 如果你需要在本地测试或开发，请按照以下步骤设置：
 
 ```bash
+uv venv --python D:/Python3.13/python.exe
 # 安装所有依赖
 uv sync --dev
 
