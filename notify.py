@@ -32,9 +32,36 @@ class NotificationKit:
 		msg.attach(body)
 
 		smtp_server = self.smtp_server if self.smtp_server else f'smtp.{self.email_user.split("@")[1]}'
-		with smtplib.SMTP_SSL(smtp_server, 465) as server:
+		
+		try:
+			server = smtplib.SMTP_SSL(smtp_server, 465)
 			server.login(self.email_user, self.email_pass)
 			server.send_message(msg)
+			
+			# 尝试正常退出
+			try:
+				server.quit()
+			except Exception as quit_error:
+				print(f"[DEBUG] SMTP退出时出现警告: {quit_error}")
+				# 即使退出失败，邮件已经发送成功，所以不抛出异常
+				
+			print(f"[DEBUG] 邮件发送成功: {title}")
+		except smtplib.SMTPAuthenticationError as e:
+			raise Exception(f"SMTP认证失败: {e}")
+		except smtplib.SMTPConnectError as e:
+			raise Exception(f"SMTP连接失败: {e}")
+		except smtplib.SMTPServerDisconnected:
+			raise Exception("SMTP服务器断开连接")
+		except Exception as e:
+			# 捕获其他所有异常，包括(-1, b'\x00\x00\x00')这样的错误
+			raise Exception(f"邮件发送失败: {e}")
+		finally:
+			# 确保连接被关闭
+			try:
+				if 'server' in locals():
+					server.close()
+			except:
+				pass
 
 	def send_pushplus(self, title: str, content: str):
 		if not self.pushplus_token:
