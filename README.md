@@ -1,4 +1,4 @@
-# Any Router 多账号自动签到个人版
+# Any Router 多账号自动签到个人版签到
 
 推荐搭配使用[Auo](https://github.com/millylee/auo)，支持任意 Claude Code Token 切换的工具。
 
