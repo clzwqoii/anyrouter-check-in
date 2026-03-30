@@ -1,7 +1,8 @@
 name: AnyRouter 自动签到
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # GitHub Actions cron uses UTC; 08:00 UTC = 16:00 Asia/Shanghai
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
