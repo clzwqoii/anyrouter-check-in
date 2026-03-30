@@ -1,7 +1,8 @@
 name: AnyRouter 自动签到
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    # GitHub Actions cron uses UTC; 08:00 UTC = 16:00 Asia/Shanghai
+    - cron: '0 8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -72,15 +73,24 @@ jobs:
     - name: 执行签到
       env:
         ANYROUTER_ACCOUNTS: ${{ secrets.ANYROUTER_ACCOUNTS }}
+        PROVIDERS: ${{ secrets.PROVIDERS }}
         DINGDING_WEBHOOK: ${{ secrets.DINGDING_WEBHOOK }}
         EMAIL_USER: ${{ secrets.EMAIL_USER }}
         EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
         EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
         CUSTOM_SMTP_SERVER: ${{ secrets.CUSTOM_SMTP_SERVER }}
         PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
         SERVERPUSHKEY: ${{ secrets.SERVERPUSHKEY }}
         FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
         WEIXIN_WEBHOOK: ${{ secrets.WEIXIN_WEBHOOK }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        GOTIFY_URL: ${{ secrets.GOTIFY_URL }}
+        GOTIFY_TOKEN: ${{ secrets.GOTIFY_TOKEN }}
+        GOTIFY_PRIORITY: ${{ secrets.GOTIFY_PRIORITY }}
+        BARK_KEY: ${{ secrets.BARK_KEY }}
+        BARK_SERVER: ${{ secrets.BARK_SERVER }}
       run: |
         uv run checkin.py
 
