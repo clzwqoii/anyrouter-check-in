@@ -5,6 +5,9 @@ on:
     - cron: '0 8 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   checkin:
     runs-on: windows-2025-vs2026
