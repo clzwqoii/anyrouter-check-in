@@ -26,6 +26,8 @@ def notification_kit():
 	os.environ['DINGDING_WEBHOOK'] = 'https://oapi.dingtalk.com/robot/send?access_token=fbcd45f32f17dea5c762e82644c7f28945075e0b4d22953c8eebe064b106a96f'
 	os.environ['FEISHU_WEBHOOK'] = 'https://open.feishu.cn/open-apis/bot/v2/hook/test'
 	os.environ['WEIXIN_WEBHOOK'] = 'http://weixin.example.com'
+	os.environ['GOTIFY_URL'] = 'https://gotify.example.com/message'
+	os.environ['GOTIFY_TOKEN'] = 'test_token'
 	return NotificationKit()
 
 
