@@ -1,5 +1,6 @@
 import os
 import smtplib
+from contextlib import suppress
 from email.mime.text import MIMEText
 from typing import Literal
 
@@ -67,11 +68,9 @@ class NotificationKit:
 			raise Exception(f'邮件发送失败: {e}')
 		finally:
 			# 确保连接被关闭
-			try:
+			with suppress(Exception):
 				if 'server' in locals():
 					server.close()
-			except:
-				pass
 
 	def send_pushplus(self, title: str, content: str):
 		if not self.pushplus_token:

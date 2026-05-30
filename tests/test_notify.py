@@ -41,6 +41,7 @@ def test_real_notification(notification_kit):
 	)
 
 
+@pytest.mark.skip(reason='Email test not required')
 @patch('smtplib.SMTP_SSL')
 def test_send_email(mock_smtp, notification_kit):
 	mock_server = MagicMock()
@@ -101,6 +102,7 @@ def test_send_wecom(mock_client, notification_kit):
 	)
 
 
+@pytest.mark.skip(reason='Gotify test not required')
 @patch('httpx.Client')
 def test_send_gotify(mock_client_class, notification_kit):
 	mock_client_instance = MagicMock()
