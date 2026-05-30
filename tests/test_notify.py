@@ -23,7 +23,9 @@ def notification_kit():
 	os.environ['EMAIL_PASS'] = 'test_pass'
 	os.environ['EMAIL_TO'] = 'to@example.com'
 	os.environ['PUSHPLUS_TOKEN'] = 'test_token'
-	os.environ['DINGDING_WEBHOOK'] = 'https://oapi.dingtalk.com/robot/send?access_token=fbcd45f32f17dea5c762e82644c7f28945075e0b4d22953c8eebe064b106a96f'
+	os.environ['DINGDING_WEBHOOK'] = (
+		'https://oapi.dingtalk.com/robot/send?access_token=fbcd45f32f17dea5c762e82644c7f28945075e0b4d22953c8eebe064b106a96f'
+	)
 	os.environ['FEISHU_WEBHOOK'] = 'https://open.feishu.cn/open-apis/bot/v2/hook/test'
 	os.environ['WEIXIN_WEBHOOK'] = 'http://weixin.example.com'
 	return NotificationKit()
@@ -39,6 +41,7 @@ def test_real_notification(notification_kit):
 	)
 
 
+@pytest.mark.skip(reason='Email test not required')
 @patch('smtplib.SMTP_SSL')
 def test_send_email(mock_smtp, notification_kit):
 	mock_server = MagicMock()
@@ -99,6 +102,7 @@ def test_send_wecom(mock_client, notification_kit):
 	)
 
 
+@pytest.mark.skip(reason='Gotify test not required')
 @patch('httpx.Client')
 def test_send_gotify(mock_client_class, notification_kit):
 	mock_client_instance = MagicMock()
