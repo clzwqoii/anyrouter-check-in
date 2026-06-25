@@ -1,0 +1,566 @@
+# Instincts generated from https://github.com/clzwqoii/anyrouter-check-in
+# Generated: 2026-03-30T03:33:57.354Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: anyrouter-check-in-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Commit Length
+
+## Action
+
+Keep commit messages concise (~30 characters)
+
+## Evidence
+
+- Average commit message length: 30 chars
+- Based on 118 commits
+
+---
+id: anyrouter-check-in-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: anyrouter-check-in-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: anyrouter-check-in-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: anyrouter-check-in-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: anyrouter-check-in-workflow-feature-development
+trigger: "when implementing a new feature"
+confidence: 0.75
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Workflow Feature Development
+
+## Action
+
+Follow the feature-development workflow:
+1. Add feature implementation
+2. Add tests for feature
+3. Update documentation
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~5x per month
+- Files: 
+
+---
+id: anyrouter-check-in-workflow-add-or-enhance-notification-channel
+trigger: "when doing add or enhance notification channel"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Workflow Add Or Enhance Notification Channel
+
+## Action
+
+Follow the add-or-enhance-notification-channel workflow:
+1. Implement notification logic in utils/notify.py
+2. Add or update environment variable example in .env.example
+3. Update GitHub Actions workflow to support new env variable in .github/workflows/checkin.yml
+4. Update documentation in README.md
+5. Add or update tests in tests/test_notify.py (if applicable)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: utils/notify.py, .env.example, .github/workflows/checkin.yml
+
+---
+id: anyrouter-check-in-workflow-pre-commit-config-update
+trigger: "when doing pre commit config update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Workflow Pre Commit Config Update
+
+## Action
+
+Follow the pre-commit-config-update workflow:
+1. Update .pre-commit-config.yaml (either manually or via pre-commit.ci autoupdate)
+2. Optionally update related files like .pre-commit-ci.yaml or .vscode/settings.json
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: .pre-commit-config.yaml, .pre-commit-ci.yaml, .vscode/settings.json
+
+---
+id: anyrouter-check-in-workflow-documentation-update
+trigger: "when doing documentation update"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Workflow Documentation Update
+
+## Action
+
+Follow the documentation-update workflow:
+1. Edit README.md (sometimes as a standalone commit, sometimes with feature changes)
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: README.md
+
+---
+id: anyrouter-check-in-workflow-add-or-update-pr-quality-checks
+trigger: "when doing add or update pr quality checks"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Workflow Add Or Update Pr Quality Checks
+
+## Action
+
+Follow the add-or-update-pr-quality-checks workflow:
+1. Edit or add .github/pull_request_template.md
+2. Edit or add .github/workflows/pr-check.yml
+3. Edit or add .codecov.yml, .pre-commit-config.yaml, .pre-commit-ci.yaml
+4. Update CONTRIBUTING.md and/or README.md
+5. Update pyproject.toml if needed
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: .github/pull_request_template.md, .github/workflows/pr-check.yml, .codecov.yml
+
+---
+id: anyrouter-check-in-workflow-feature-implementation-with-config-and-docs
+trigger: "when doing feature implementation with config and docs"
+confidence: 0.55
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Workflow Feature Implementation With Config And Docs
+
+## Action
+
+Follow the feature-implementation-with-config-and-docs workflow:
+1. Implement feature in checkin.py and/or utils/config.py
+2. Update README.md to document the feature
+3. Update or add relevant configuration in .env.example
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~1x per month
+- Files: checkin.py, utils/config.py, README.md
+
+---
+id: anyrouter-check-in-camelCase-functions
+trigger: "When defining a function in Python code"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In CamelCase Functions
+
+## Action
+
+Name the function using camelCase (e.g., myFunction)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.functions
+- Seen in utils/notify.py
+
+---
+id: anyrouter-check-in-pascalCase-classes
+trigger: "When defining a class in Python code"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In PascalCase Classes
+
+## Action
+
+Name the class using PascalCase (e.g., MyClass)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.classes
+
+---
+id: anyrouter-check-in-screaming-snake-constants
+trigger: "When defining a constant in Python code"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Screaming Snake Constants
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE (e.g., MY_CONSTANT)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.constants
+
+---
+id: anyrouter-check-in-camelCase-files
+trigger: "When creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In CamelCase Files
+
+## Action
+
+Name the file using camelCase (e.g., myFile.py)
+
+## Evidence
+
+- Pattern in codeStyle.namingConventions.files
+
+---
+id: anyrouter-check-in-relative-imports
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Relative Imports
+
+## Action
+
+Use relative imports (e.g., from . import module)
+
+## Evidence
+
+- Pattern in codeStyle.importStyle
+
+---
+id: anyrouter-check-in-named-exports
+trigger: "When exporting functions or classes from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Named Exports
+
+## Action
+
+Use named exports (explicitly specify __all__ or similar)
+
+## Evidence
+
+- Pattern in codeStyle.exportStyle
+
+---
+id: anyrouter-check-in-separate-tests-folder
+trigger: "When adding or updating tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Separate Tests Folder
+
+## Action
+
+Place test files in the separate tests/ folder
+
+## Evidence
+
+- tests located in tests/ folder
+- Pattern in architecture.folderStructure.testLocation
+
+---
+id: anyrouter-check-in-test-naming-pattern
+trigger: "When naming a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Test Naming Pattern
+
+## Action
+
+Prefix the test file with test_ (e.g., test_notify.py)
+
+## Evidence
+
+- tests/test_notify.py
+- Pattern in filesInvolved for add-or-enhance-notification-channel
+
+---
+id: anyrouter-check-in-test-after-feature
+trigger: "When implementing a new feature or enhancement"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Test After Feature
+
+## Action
+
+Add or update corresponding tests in the tests/ folder
+
+## Evidence
+
+- Commit sequence in workflows includes adding tests after feature
+- Example in add-or-enhance-notification-channel
+
+---
+id: anyrouter-check-in-git-commit-prefix
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Git Commit Prefix
+
+## Action
+
+Prefix the commit with one of: feat, fix, docs, refactor, chore
+
+## Evidence
+
+- Pattern in commits.prefixes
+- Examples: 'feat: add EMAIL_SENDER', 'fix: bark env'
+
+---
+id: anyrouter-check-in-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Commit Length
+
+## Action
+
+Keep the commit message concise (average ~30 characters)
+
+## Evidence
+
+- Pattern in commits.averageLength
+- Examples in commits.examples
+
+---
+id: anyrouter-check-in-add-notification-channel
+trigger: "When adding or enhancing a notification channel integration"
+confidence: 0.95
+domain: workflow
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Add Notification Channel
+
+## Action
+
+Update utils/notify.py, .env.example, .github/workflows/checkin.yml, README.md, and tests/test_notify.py as needed
+
+## Evidence
+
+- Workflow: add-or-enhance-notification-channel
+- Commit sequence and files involved
+
+---
+id: anyrouter-check-in-update-pre-commit-config
+trigger: "When upgrading or optimizing pre-commit hooks or related settings"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Update Pre Commit Config
+
+## Action
+
+Update .pre-commit-config.yaml and optionally .pre-commit-ci.yaml or .vscode/settings.json
+
+## Evidence
+
+- Workflow: pre-commit-config-update
+- Commit sequence and files involved
+
+---
+id: anyrouter-check-in-update-documentation
+trigger: "When clarifying, correcting, or enhancing documentation"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Update Documentation
+
+## Action
+
+Edit README.md (standalone or with feature changes)
+
+## Evidence
+
+- Workflow: documentation-update
+- Commit sequence and files involved
+
+---
+id: anyrouter-check-in-add-pr-quality-checks
+trigger: "When improving or introducing PR review standards and automation"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Add Pr Quality Checks
+
+## Action
+
+Edit or add .github/pull_request_template.md, .github/workflows/pr-check.yml, .codecov.yml, .pre-commit-config.yaml, .pre-commit-ci.yaml, CONTRIBUTING.md, README.md, and/or pyproject.toml
+
+## Evidence
+
+- Workflow: add-or-update-pr-quality-checks
+- Commit sequence and files involved
+
+---
+id: anyrouter-check-in-add-feature-with-config-and-docs
+trigger: "When implementing a new core feature or significant enhancement"
+confidence: 0.8
+domain: workflow
+source: repo-analysis
+source_repo: clzwqoii/anyrouter-check-in
+---
+
+# Anyrouter Check In Add Feature With Config And Docs
+
+## Action
+
+Update checkin.py and/or utils/config.py, README.md, and .env.example
+
+## Evidence
+
+- Workflow: feature-implementation-with-config-and-docs
+- Commit sequence and files involved
+
